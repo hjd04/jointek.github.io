@@ -89,6 +89,35 @@
       -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
     }
 
+    /* 背景视频 */
+    .bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: linear-gradient(135deg, 
+        rgba(248, 250, 252, 0.85) 0%, 
+        rgba(248, 250, 252, 0.75) 50%,
+        rgba(248, 250, 252, 0.85) 100%);
+      pointer-events: none;
+    }
+
     /* 焦点光晕 */
     .glow-point {
       position: fixed;
@@ -402,6 +431,12 @@
 <body>
   <div class="gradient-bg"></div>
   <div class="grid-bg"></div>
+  
+  <!-- 背景视频 -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="https://jointek-1428336988.cos.ap-guangzhou.myqcloud.com/Videos/Animation_Portfolio.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
   <div class="glow-point" id="glowPoint"></div>
   
   <div class="decoration decoration-1"></div>
